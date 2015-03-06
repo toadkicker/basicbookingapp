@@ -1,0 +1,14 @@
+<h3>resources</h3>
+
+<% @resources.each do |resource| %>
+  <div class="resource">
+    <%= resource.name %>
+    <%= link_to "Show all bookings", resource_bookings_path(resource) %>
+    <%= link_to "Delete", resource_path(resource), data: { confirm: 'Are you sure?' }, method: :delete %>
+    <%= link_to "Edit", edit_resource_path(resource) %>
+    <%= link_to "Add booking", new_resource_booking_path(resource) %>
+  </div>
+<% end %>
+<div class="actions">
+  <%= link_to "New Booking", new_resource_path  %>
+</div>
